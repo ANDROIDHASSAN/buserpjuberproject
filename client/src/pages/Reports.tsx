@@ -110,7 +110,7 @@ const Reports = () => {
                                     dataKey="value"
                                     label={({ name, percent }) => `${name} ${((percent || 0) * 100).toFixed(0)}%`}
                                 >
-                                    {routeData?.map((entry, index) => (
+                                    {routeData?.map((_entry, index) => (
                                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>
