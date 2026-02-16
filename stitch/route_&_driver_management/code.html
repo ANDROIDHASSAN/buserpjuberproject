@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Route &amp; Driver Management - Huzaifa Travels</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16a249",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen">
+<!-- Top Navigation Bar -->
+<nav class="sticky top-0 z-50 bg-white dark:bg-zinc-900 border-b border-primary/10 px-6 py-4">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg">
+<span class="material-icons text-primary">directions_bus</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight">Huzaifa <span class="text-primary">Travels</span></h1>
+<p class="text-xs text-slate-500 font-medium">Route Management System</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 bg-slate-100 dark:bg-zinc-800 px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="text-xs font-semibold">System Online</span>
+</div>
+<button class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons text-xl">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30">
+<span class="font-bold text-primary">AD</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 py-8">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<nav class="flex items-center gap-2 text-sm text-slate-500 mb-2">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-icons text-xs">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Routes</a>
+<span class="material-icons text-xs">chevron_right</span>
+<span class="text-slate-900 dark:text-white font-medium">Route 42 - North Secondary</span>
+</nav>
+<div class="flex items-center gap-3">
+<h2 class="text-3xl font-bold">Route 42 - North Secondary</h2>
+<span class="px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full border border-primary/20">Active</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-icons">notifications_active</span>
+                    Send Reminder to Parents
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Driver Info Card -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-slate-200 dark:border-zinc-800 overflow-hidden">
+<div class="h-24 bg-gradient-to-r from-primary to-green-600 relative">
+<div class="absolute -bottom-10 left-6">
+<img alt="Driver Profile" class="w-20 h-20 rounded-xl border-4 border-white dark:border-zinc-900 object-cover shadow-md" data-alt="Professional driver portrait smiling in uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVWLICL7Z-yknuG1uDXtlhf6bNIq7-ipqdp7FqJ2efqAedoiZ5f0ZglHPYt0PZ17554TQ9eQdTdnYU_ME2gDEmqmDvAPZ5Y-STN02UvHow8dHsGsG07SeFz1i1GpFdCeXszju52L0jCJcFpoYWwOAmQ5CQeXdTaIYECVF92S72xEo5bHtRtQu-4nHtsccBGORqoOpR7Gin-PyJGggVs-7rmbodBpEteeFHRpNhImU0M5wns2lK5KUO5HjZ1LR6b_B7_o0Afjfguw"/>
+</div>
+</div>
+<div class="pt-12 p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold">Ahmed Hassan</h3>
+<p class="text-slate-500 text-sm">Lead Driver • 8 yrs Exp.</p>
+</div>
+<span class="px-3 py-1 bg-primary text-white text-xs font-black tracking-widest rounded-lg">MH-12-RS-4200</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-zinc-800/50 rounded-lg">
+<span class="material-icons text-primary">phone</span>
+<div>
+<p class="text-xs text-slate-500 uppercase font-bold tracking-wider">Contact Number</p>
+<p class="text-sm font-semibold">+91 98765 43210</p>
+</div>
+</div>
+<div class="p-4 border-2 border-dashed border-primary/20 rounded-xl bg-primary/5">
+<label class="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">Driver UPI ID (For Direct Payments)</label>
+<div class="flex items-center gap-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-lg px-3 py-2">
+<span class="material-icons text-slate-400 text-sm">account_balance_wallet</span>
+<input class="bg-transparent border-none p-0 text-sm font-medium w-full focus:ring-0" readonly="" type="text" value="ahmed.driver@upi"/>
+<button class="text-primary hover:bg-primary/10 p-1 rounded transition-colors">
+<span class="material-icons text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-slate-100 dark:border-zinc-800 grid grid-cols-2 gap-4">
+<div class="text-center">
+<p class="text-2xl font-bold text-primary">24</p>
+<p class="text-[10px] text-slate-500 font-bold uppercase">Students</p>
+</div>
+<div class="text-center border-l border-slate-100 dark:border-zinc-800">
+<p class="text-2xl font-bold text-primary">12</p>
+<p class="text-[10px] text-slate-500 font-bold uppercase">Stops</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Vehicle Stats -->
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-zinc-800">
+<h4 class="font-bold mb-4 flex items-center gap-2">
+<span class="material-icons text-primary text-lg">commute</span>
+                        Vehicle Information
+                    </h4>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Model</span>
+<span class="font-medium">Force Traveller 3050</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Capacity</span>
+<span class="font-medium">26 / 30 Seats</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-zinc-800 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Fuel Level</span>
+<span class="text-primary font-bold">75%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Student Management -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Search & Add Bar -->
+<div class="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-zinc-800 flex flex-col sm:flex-row gap-4 items-center">
+<div class="relative flex-1 w-full">
+<span class="absolute inset-y-0 left-3 flex items-center">
+<span class="material-icons text-slate-400">search</span>
+</span>
+<input class="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-zinc-800 border-slate-200 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all" placeholder="Search by student name, ID or parent contact..." type="text"/>
+</div>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-primary/10 text-primary hover:bg-primary/20 font-bold rounded-lg transition-colors whitespace-nowrap">
+<span class="material-icons">person_add</span>
+                        Add Student
+                    </button>
+</div>
+<!-- Student List -->
+<div class="bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-slate-200 dark:border-zinc-800 overflow-hidden flex-1 flex flex-col">
+<div class="px-6 py-4 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between">
+<h4 class="font-bold">Assigned Students</h4>
+<button class="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+<span class="material-icons text-xs">download</span> EXPORT LIST
+                        </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-zinc-800/50 text-[10px] uppercase tracking-widest font-bold text-slate-500">
+<th class="px-6 py-3">Student Details</th>
+<th class="px-6 py-3">Pickup Stop</th>
+<th class="px-6 py-3">Grade</th>
+<th class="px-6 py-3">Parent Contact</th>
+<th class="px-6 py-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-zinc-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-zinc-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center font-bold">ZS</div>
+<div>
+<p class="font-bold text-sm">Zayan Sheikh</p>
+<p class="text-xs text-slate-500 italic">ID: #ST-8821</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium">Crystal Heights Gate 2</p>
+<p class="text-[10px] text-slate-400">ETA: 07:15 AM</p>
+</td>
+<td class="px-6 py-4 text-sm">Class 8-C</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-icons text-sm">call</span>
+</button>
+<span class="text-xs font-medium">98901 23456</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-zinc-700 rounded transition-colors text-slate-400 group-hover:text-slate-600">
+<span class="material-icons text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-zinc-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold">AK</div>
+<div>
+<p class="font-bold text-sm">Ayaan Khan</p>
+<p class="text-xs text-slate-500 italic">ID: #ST-8825</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium">Royal Garden Circle</p>
+<p class="text-[10px] text-slate-400">ETA: 07:25 AM</p>
+</td>
+<td class="px-6 py-4 text-sm">Class 10-A</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-icons text-sm">call</span>
+</button>
+<span class="text-xs font-medium">98230 45678</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-zinc-700 rounded transition-colors text-slate-400 group-hover:text-slate-600">
+<span class="material-icons text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-zinc-800/30 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center font-bold">SM</div>
+<div>
+<p class="font-bold text-sm">Sara Memon</p>
+<p class="text-xs text-slate-500 italic">ID: #ST-8830</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium">Sunshine Residency</p>
+<p class="text-[10px] text-slate-400">ETA: 07:40 AM</p>
+</td>
+<td class="px-6 py-4 text-sm">Class 5-B</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-icons text-sm">call</span>
+</button>
+<span class="text-xs font-medium">91456 78901</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-1 hover:bg-slate-200 dark:hover:bg-zinc-700 rounded transition-colors text-slate-400 group-hover:text-slate-600">
+<span class="material-icons text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-auto p-4 border-t border-slate-100 dark:border-zinc-800 flex justify-center">
+<button class="text-sm font-semibold text-slate-500 hover:text-primary transition-colors flex items-center gap-2">
+                            Load 21 More Students
+                            <span class="material-icons text-sm">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Quick Action Prompt -->
+<div class="bg-primary/5 border border-primary/10 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+<span class="material-icons">share_location</span>
+</div>
+<div>
+<h5 class="font-bold text-lg">Broadcast Current Location</h5>
+<p class="text-sm text-slate-600 dark:text-slate-400">Instantly share live bus location with all 24 parents on this route.</p>
+</div>
+</div>
+<button class="w-full md:w-auto px-8 py-3 bg-white dark:bg-zinc-900 border-2 border-primary text-primary font-black rounded-lg hover:bg-primary hover:text-white transition-all whitespace-nowrap">
+                        ENABLE LIVE TRACKING
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Map Preview Placeholder (Decorative) -->
+<div class="fixed bottom-6 right-6 z-40">
+<div class="group relative">
+<div class="absolute -top-16 right-0 bg-white dark:bg-zinc-900 p-2 rounded-lg shadow-xl border border-slate-200 dark:border-zinc-700 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+<p class="text-xs font-bold text-primary">View Full Route Map</p>
+</div>
+<div class="w-16 h-16 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+<span class="material-icons text-3xl">map</span>
+</div>
+</div>
+</div>
+</body></html>

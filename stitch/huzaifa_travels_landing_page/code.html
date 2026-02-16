@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Huzaifa Travels | Smart Bus &amp; Student Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16a249",
+                        "secondary": "#2563eb",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "neutral-soft": "#f9fafb",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display transition-colors duration-300">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="bg-primary p-2 rounded-lg shadow-lg shadow-primary/20">
+<span class="material-icons text-white text-3xl">directions_bus</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight text-primary">Huzaifa Travels</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold leading-none">Reliable Excellence</p>
+</div>
+</div>
+<!-- Navigation & Language -->
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+<a class="hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="hover:text-primary transition-colors" href="#">Safety</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-full text-sm font-medium hover:border-primary transition-all">
+<span class="material-icons text-primary text-sm">language</span>
+<span>English</span>
+<span class="material-icons text-slate-400 text-xs">expand_more</span>
+</button>
+<div class="absolute right-0 mt-2 w-40 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+<ul class="py-2">
+<li><a class="block px-4 py-2 text-sm hover:bg-primary/10 hover:text-primary" href="#">English</a></li>
+<li><a class="block px-4 py-2 text-sm hover:bg-primary/10 hover:text-primary" href="#">हिंदी (Hindi)</a></li>
+<li><a class="block px-4 py-2 text-sm hover:bg-primary/10 hover:text-primary" href="#">मराठी (Marathi)</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-12 pb-24 lg:pt-20 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- Text Content -->
+<div class="text-center lg:text-left">
+<span class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-bold mb-6">
+<span class="material-icons text-sm">verified_user</span>
+                            School-Approved Safety
+                        </span>
+<h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
+                            Smart Bus &amp; <span class="text-primary">Student Management</span>
+</h2>
+<p class="text-lg text-slate-600 dark:text-slate-300 mb-10 max-w-xl">
+                            The all-in-one platform for schools, parents, and drivers to ensure safe, efficient, and transparent student transportation every single day.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<!-- Admin CTA -->
+<button class="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-5 rounded-xl font-bold text-lg shadow-xl shadow-primary/20 transition-transform active:scale-95 group">
+<span class="material-icons group-hover:rotate-12 transition-transform">admin_panel_settings</span>
+                                Admin Login
+                            </button>
+<!-- Student CTA -->
+<button class="flex items-center justify-center gap-3 bg-secondary hover:bg-secondary/90 text-white px-8 py-5 rounded-xl font-bold text-lg shadow-xl shadow-secondary/20 transition-transform active:scale-95 group">
+<span class="material-icons group-hover:rotate-12 transition-transform">school</span>
+                                Student Login
+                            </button>
+</div>
+<div class="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+<div class="flex flex-col items-center lg:items-start">
+<span class="text-2xl font-bold">500+</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Active Buses</span>
+</div>
+<div class="h-8 w-px bg-slate-300 dark:bg-slate-700"></div>
+<div class="flex flex-col items-center lg:items-start">
+<span class="text-2xl font-bold">10k+</span>
+<span class="text-xs uppercase tracking-widest font-semibold">Happy Students</span>
+</div>
+</div>
+</div>
+<!-- Visual Section -->
+<div class="relative">
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl -z-10 transform scale-150 translate-x-12 translate-y-12"></div>
+<div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
+<img alt="Smart School Bus" class="w-full h-[450px] object-cover" data-alt="Modern yellow school bus driving on a suburban road" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0xfv8l6-GGVWP2O3GA6Prmcxg3BCoAuAq2ZVtV985yJFDMkHqR_Js-3qWfN-omwrZ_ltCxPEha2pBXDw8YjbzoXWUfiQHIT5itiUN28lhnv7_ERDQNzhYc_5VFgODZYDa3j4l_jt5AtR1UfFmUBGLMMPWr6rmHDwGSp15DTiYmKEe4yxJXgsW_z36oVjx0jP9BnrB4gHuhUcYEcenmw2DMGsXaLExmg_MEpthp189gmYyfxLCxRyAm-YLe7NmE2HtM_qh8gqrpi8"/>
+<!-- Overlay Badge -->
+<div class="absolute bottom-6 left-6 right-6 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm p-4 rounded-xl flex items-center gap-4 shadow-lg">
+<div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shrink-0">
+<span class="material-icons">location_on</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary uppercase">Live Update</p>
+<p class="text-sm font-semibold">Bus #42: 2 mins from School Campus</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Grid -->
+<section class="py-24 bg-white dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">Why Schools Trust Huzaifa Travels</h2>
+<p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">Our comprehensive management system is designed to provide peace of mind to parents and efficiency to school administrators.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="p-8 rounded-2xl bg-background-light dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-shadow group">
+<div class="w-16 h-16 rounded-2xl bg-primary/20 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-icons text-4xl">my_location</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Real-time Tracking</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Know exactly where the bus is at any moment. Live GPS integration for precise arrival estimates.</p>
+</div>
+<!-- Card 2 -->
+<div class="p-8 rounded-2xl bg-background-light dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-shadow group">
+<div class="w-16 h-16 rounded-2xl bg-blue-100 text-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-icons text-4xl">security</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Enhanced Security</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Student RFID check-ins and check-outs ensure every child is accounted for during the journey.</p>
+</div>
+<!-- Card 3 -->
+<div class="p-8 rounded-2xl bg-background-light dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-shadow group">
+<div class="w-16 h-16 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-icons text-4xl">notifications_active</span>
+</div>
+<h3 class="text-xl font-bold mb-3 text-slate-900 dark:text-white">Instant Alerts</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Receive instant push notifications for bus delays, route changes, or emergency updates.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-primary rounded-3xl p-12 text-white relative overflow-hidden flex flex-col items-center text-center">
+<div class="absolute top-0 right-0 p-12 opacity-10">
+<span class="material-icons text-[200px]">directions_bus</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to transform your school's commute?</h2>
+<p class="text-primary-100 text-lg mb-10 max-w-xl relative z-10 opacity-90">Join hundreds of schools already using Huzaifa Travels to simplify their daily logistics.</p>
+<div class="flex flex-wrap justify-center gap-4 relative z-10">
+<button class="bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all flex items-center gap-2">
+                            Request Demo
+                            <span class="material-icons text-sm">arrow_forward</span>
+</button>
+<button class="bg-primary-dark/20 border border-white/30 text-white px-8 py-3 rounded-xl font-bold hover:bg-white/10 transition-all">
+                            Contact Sales
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 py-12 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-icons text-primary">directions_bus</span>
+<span class="text-xl font-bold tracking-tight">Huzaifa Travels</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm">
+                        Leading provider of smart student transportation and management software solutions. Building safer journeys for the next generation.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400">Quick Links</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Login Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 uppercase text-xs tracking-widest text-slate-400">Contact Us</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li class="flex items-center gap-3">
+<span class="material-icons text-primary text-sm">email</span>
+                            support@huzaifa-travels.com
+                        </li>
+<li class="flex items-center gap-3">
+<span class="material-icons text-primary text-sm">call</span>
+                            +91 888 777 6655
+                        </li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-medium">
+<p>© 2024 Huzaifa Travels. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+<a class="hover:text-primary" href="#">Facebook</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Huzaifa Travels | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#16a249",
+                "background-light": "#f6f8f7",
+                "background-dark": "#112117",
+                "status-pending": "#DC2626",
+                "status-partial": "#F97316",
+              },
+              fontFamily: {
+                "display": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 antialiased">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-zinc-900 border-r border-primary/10 flex flex-col fixed h-full z-50">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons">directions_bus</span>
+</div>
+<h1 class="text-xl font-bold text-primary tracking-tight leading-tight">Huzaifa<br/><span class="text-slate-600 dark:text-slate-300">Travels</span></h1>
+</div>
+<nav class="flex-1 px-4 mt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-white rounded-lg shadow-md shadow-primary/20" href="#">
+<span class="material-icons text-xl">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all rounded-lg" href="#">
+<span class="material-icons text-xl">groups</span>
+<span class="font-medium">Students</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all rounded-lg" href="#">
+<span class="material-icons text-xl">account_balance_wallet</span>
+<span class="font-medium">Fee Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all rounded-lg" href="#">
+<span class="material-icons text-xl">map</span>
+<span class="font-medium">Routes</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all rounded-lg" href="#">
+<span class="material-icons text-xl">person_pin</span>
+<span class="font-medium">Drivers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all rounded-lg" href="#">
+<span class="material-icons text-xl">bar_chart</span>
+<span class="font-medium">Reports</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-zinc-800">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-zinc-800 rounded-lg" href="#">
+<span class="material-icons text-xl">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-8">
+<!-- Header -->
+<header class="flex justify-between items-center mb-10">
+<div>
+<h2 class="text-3xl font-bold text-slate-800 dark:text-white">Welcome to Huzaifa Travels</h2>
+<p class="text-slate-500 mt-1">Manage your fleet and student safety from one place.</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 bg-white dark:bg-zinc-900 rounded-full border border-slate-200 dark:border-zinc-800 text-slate-600 dark:text-slate-400">
+<span class="material-icons">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-zinc-900"></span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200 dark:border-zinc-800">
+<div class="text-right">
+<p class="text-sm font-semibold text-slate-800 dark:text-white">Admin User</p>
+<p class="text-xs text-slate-500">Fleet Supervisor</p>
+</div>
+<img alt="Profile" class="w-10 h-10 rounded-full border-2 border-primary" data-alt="User profile portrait of a male administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgFXDhrRuNOCbcInDyfDcoNUPdETk-wce1ReVsuQCWMPedHPDxlO8J_UU8vsUFzcM7AytaqEKZKW2ASfonC4P8SbbnqmtxMQ0MVewF2xV2e9MHyAlR0r6q0IqnFjjbsST-nc9x3WC44FqBxl6BJTIFAAHzzQZp5P9RJ0rVDDPanQlhJAiHkZXzggIu067i50a-6VGRqL-KAQvEVlV0VqOq77gNnWm71b2EoA24dw97HARj-RXEsmi0v04to4tAvgQlfPWgC79pArM"/>
+</div>
+</div>
+</header>
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Total Students -->
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-slate-100 dark:bg-zinc-800 rounded-lg text-slate-600">
+<span class="material-icons">school</span>
+</div>
+<span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-zinc-800 px-2 py-1 rounded">GLOBAL</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Total Students</p>
+<h3 class="text-3xl font-bold text-slate-800 dark:text-white mt-1">1,248</h3>
+</div>
+<!-- Paid -->
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-primary/20 shadow-sm hover:shadow-md transition-shadow border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-icons">check_circle</span>
+</div>
+<span class="text-xs font-bold text-primary bg-primary/5 px-2 py-1 rounded">PAID</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Fees Collected</p>
+<h3 class="text-3xl font-bold text-slate-800 dark:text-white mt-1">842</h3>
+</div>
+<!-- Pending -->
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-status-pending/20 shadow-sm hover:shadow-md transition-shadow border-l-4 border-l-status-pending">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-red-50 rounded-lg text-status-pending">
+<span class="material-icons">error_outline</span>
+</div>
+<span class="text-xs font-bold text-status-pending bg-red-50 px-2 py-1 rounded">UNPAID</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Pending Payments</p>
+<h3 class="text-3xl font-bold text-slate-800 dark:text-white mt-1">156</h3>
+</div>
+<!-- Partial -->
+<div class="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-status-partial/20 shadow-sm hover:shadow-md transition-shadow border-l-4 border-l-status-partial">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-orange-50 rounded-lg text-status-partial">
+<span class="material-icons">pending</span>
+</div>
+<span class="text-xs font-bold text-status-partial bg-orange-50 px-2 py-1 rounded">PARTIAL</span>
+</div>
+<p class="text-slate-500 text-sm font-medium">Partial Dues</p>
+<h3 class="text-3xl font-bold text-slate-800 dark:text-white mt-1">250</h3>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-10">
+<!-- Analytics Section -->
+<div class="col-span-2 space-y-8">
+<section class="bg-white dark:bg-zinc-900 p-8 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm">
+<div class="flex justify-between items-center mb-8">
+<h4 class="text-lg font-bold text-slate-800 dark:text-white">Monthly Collection Trend</h4>
+<select class="text-sm bg-slate-50 dark:bg-zinc-800 border-none rounded-lg text-slate-600 focus:ring-primary">
+<option>Last 6 Months</option>
+<option>Last Year</option>
+</select>
+</div>
+<div class="h-64 relative overflow-hidden rounded-lg">
+<div class="absolute inset-0 flex items-end justify-between px-4 pb-2">
+<div class="w-12 bg-primary/20 rounded-t-lg h-2/5 hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-12 bg-primary/20 rounded-t-lg h-3/5 hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-12 bg-primary/30 rounded-t-lg h-1/2 hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-12 bg-primary/50 rounded-t-lg h-4/5 hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-12 bg-primary/80 rounded-t-lg h-3/4 hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-12 bg-primary rounded-t-lg h-full hover:bg-primary/90 transition-all cursor-pointer"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 px-2 text-xs font-semibold text-slate-400">
+<span>JAN</span>
+<span>FEB</span>
+<span>MAR</span>
+<span>APR</span>
+<span>MAY</span>
+<span>JUN</span>
+</div>
+</section>
+<!-- Quick Actions Section -->
+<section>
+<h4 class="text-lg font-bold text-slate-800 dark:text-white mb-6">Quick Actions</h4>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<button class="flex flex-col items-center justify-center p-6 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 hover:border-primary hover:text-primary transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons">person_add</span>
+</div>
+<span class="text-sm font-semibold">Add Student</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 hover:border-primary hover:text-primary transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons">visibility</span>
+</div>
+<span class="text-sm font-semibold">View Students</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 hover:border-status-pending hover:text-status-pending transition-all group">
+<div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-3 group-hover:bg-status-pending group-hover:text-white transition-colors">
+<span class="material-icons">money_off</span>
+</div>
+<span class="text-sm font-semibold">Pending Fees</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 hover:border-primary hover:text-primary transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons">alt_route</span>
+</div>
+<span class="text-sm font-semibold">Routes</span>
+</button>
+<button class="flex flex-col items-center justify-center p-6 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 hover:border-primary hover:text-primary transition-all group">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons">description</span>
+</div>
+<span class="text-sm font-semibold">Reports</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Side Panel (Recent Activity) -->
+<div class="col-span-1">
+<div class="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm p-6 sticky top-8">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-bold text-slate-800 dark:text-white">Recent Activity</h4>
+<a class="text-xs font-bold text-primary hover:underline" href="#">VIEW ALL</a>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center text-green-600">
+<span class="material-icons text-lg">payment</span>
+</div>
+<div>
+<p class="text-sm text-slate-800 dark:text-slate-200 font-medium">Fee Received</p>
+<p class="text-xs text-slate-500">Student ID: #2241 • $450.00</p>
+<p class="text-[10px] text-slate-400 mt-1 uppercase">2 minutes ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center text-blue-600">
+<span class="material-icons text-lg">person_add_alt</span>
+</div>
+<div>
+<p class="text-sm text-slate-800 dark:text-slate-200 font-medium">New Student Enrolled</p>
+<p class="text-xs text-slate-500">Sara Johnson • Route 04</p>
+<p class="text-[10px] text-slate-400 mt-1 uppercase">1 hour ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-orange-100 flex-shrink-0 flex items-center justify-center text-orange-600">
+<span class="material-icons text-lg">departure_board</span>
+</div>
+<div>
+<p class="text-sm text-slate-800 dark:text-slate-200 font-medium">Route Deviation</p>
+<p class="text-xs text-slate-500">Bus 12 delayed by traffic</p>
+<p class="text-[10px] text-slate-400 mt-1 uppercase">3 hours ago</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-red-100 flex-shrink-0 flex items-center justify-center text-red-600">
+<span class="material-icons text-lg">warning_amber</span>
+</div>
+<div>
+<p class="text-sm text-slate-800 dark:text-slate-200 font-medium">Payment Overdue</p>
+<p class="text-xs text-slate-500">Notice sent to Parent #889</p>
+<p class="text-[10px] text-slate-400 mt-1 uppercase">Yesterday</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-100 dark:border-zinc-800">
+<h5 class="text-xs font-bold text-slate-400 mb-4 uppercase tracking-wider">Operational Status</h5>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs font-medium mb-1">
+<span class="text-slate-600 dark:text-slate-400">Buses On Route</span>
+<span class="text-primary">42/45</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[93%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs font-medium mb-1">
+<span class="text-slate-600 dark:text-slate-400">Revenue Goal</span>
+<span class="text-slate-800 dark:text-slate-200">78%</span>
+</div>
+<div class="w-full h-1.5 bg-slate-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[78%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

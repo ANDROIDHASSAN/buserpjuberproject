@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Reminder Modal - Huzaifa Travels</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16a249",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+<!-- Dashboard Header Background (Simulated) -->
+<header class="w-full bg-white dark:bg-emerald-950/20 border-b border-primary/10 p-4 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons">directions_bus</span>
+</div>
+<h1 class="font-bold text-xl text-emerald-900 dark:text-emerald-50">Huzaifa Travels</h1>
+</div>
+<div class="flex gap-4 items-center">
+<div class="text-right">
+<p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">School Admin</p>
+<p class="text-sm font-semibold dark:text-white">Sarah Jenkins</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-icons text-primary">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area (Blurred Background) -->
+<main class="flex-grow p-8 relative">
+<div class="max-w-6xl mx-auto space-y-6 opacity-40 select-none pointer-events-none">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-bold text-emerald-900 dark:text-emerald-50">Student Accounts</h2>
+<p class="text-emerald-600 dark:text-emerald-400">Manage billing and transport fees</p>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-lg font-semibold">+ Add Student</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-emerald-950/30 p-6 rounded-xl border border-primary/10 shadow-sm">
+<p class="text-emerald-600 dark:text-emerald-400 text-sm">Total Outstanding</p>
+<p class="text-2xl font-bold text-emerald-900 dark:text-emerald-50">$12,450.00</p>
+</div>
+<div class="bg-white dark:bg-emerald-950/30 p-6 rounded-xl border border-primary/10 shadow-sm">
+<p class="text-emerald-600 dark:text-emerald-400 text-sm">Reminders Sent Today</p>
+<p class="text-2xl font-bold text-emerald-900 dark:text-emerald-50">24</p>
+</div>
+<div class="bg-white dark:bg-emerald-950/30 p-6 rounded-xl border border-primary/10 shadow-sm">
+<p class="text-emerald-600 dark:text-emerald-400 text-sm">Collection Rate</p>
+<p class="text-2xl font-bold text-emerald-900 dark:text-emerald-50">92%</p>
+</div>
+</div>
+<div class="bg-white dark:bg-emerald-950/30 rounded-xl border border-primary/10 shadow-sm overflow-hidden">
+<table class="w-full text-left">
+<thead class="bg-primary/5">
+<tr>
+<th class="p-4 text-emerald-800 dark:text-emerald-100 font-semibold">Student Name</th>
+<th class="p-4 text-emerald-800 dark:text-emerald-100 font-semibold">Bus Route</th>
+<th class="p-4 text-emerald-800 dark:text-emerald-100 font-semibold">Amount Due</th>
+<th class="p-4 text-emerald-800 dark:text-emerald-100 font-semibold">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-primary/10">
+<tr><td class="p-4">Zaid Ahmed</td><td class="p-4">Route A-12</td><td class="p-4 font-bold text-red-600">$450.00</td><td class="p-4"><button class="text-primary font-medium">Remind</button></td></tr>
+<tr><td class="p-4">Ayesha Khan</td><td class="p-4">Route B-04</td><td class="p-4 font-bold text-red-600">$210.00</td><td class="p-4"><button class="text-primary font-medium">Remind</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- MODAL OVERLAY -->
+<div class="fixed inset-0 bg-emerald-950/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+<div class="bg-white dark:bg-emerald-900 w-full max-w-lg rounded-xl shadow-2xl overflow-hidden border border-primary/20">
+<!-- Modal Header -->
+<div class="px-6 py-4 border-b border-primary/10 flex justify-between items-center bg-primary/5">
+<div class="flex items-center gap-2">
+<span class="material-icons text-primary">notifications_active</span>
+<h3 class="font-bold text-emerald-900 dark:text-white">Send Payment Reminder</h3>
+</div>
+<button class="text-emerald-400 hover:text-emerald-600 dark:hover:text-white transition-colors">
+<span class="material-icons">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-6 space-y-6">
+<div class="flex items-center gap-4 p-4 bg-emerald-50 dark:bg-emerald-800/20 rounded-lg">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a young student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIpBhWguUmy8-D-WoD50QnaID0CRatUWjZ71abf7-sbbLvATcuAHzneniNNufYlHrw6KzYSnC9e91jkLTu5JUySpUZSXhZycKuDkr4NQhnhxvp2vHmP51a6fuM_7e_9kDbi3HGvS9j5Z0GNcMrOKxSF46ADpLejsZTcpaxaD0Inlw8uD3W_VWQw4WVnO5vyaO73qCWgzarZin5TXiQZMxrfW5zxv8M4rq65mslNeLM_dh92sFEGMU1N3vsTmuAdA6h8tGQF73DemY"/>
+</div>
+<div>
+<p class="text-sm text-emerald-600 dark:text-emerald-400 font-medium">Student Profile</p>
+<p class="font-bold text-emerald-900 dark:text-white">Zaid Ahmed</p>
+</div>
+<div class="ml-auto text-right">
+<p class="text-sm text-emerald-600 dark:text-emerald-400 font-medium">Total Balance</p>
+<p class="text-xl font-bold text-primary">$450.00</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Billing Period</label>
+<div class="w-full px-3 py-2 bg-background-light dark:bg-emerald-950/40 rounded border border-primary/10 text-emerald-900 dark:text-emerald-50 text-sm">
+                                    October 2023
+                                </div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Parent Phone</label>
+<div class="w-full px-3 py-2 bg-background-light dark:bg-emerald-950/40 rounded border border-primary/10 text-emerald-900 dark:text-emerald-50 text-sm">
+                                    +92 300 123 4567
+                                </div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Message Preview</label>
+<div class="p-3 bg-background-light dark:bg-emerald-950/40 rounded border border-primary/10 text-sm text-emerald-800 dark:text-emerald-100 italic leading-relaxed">
+                                "Dear Parent, this is a friendly reminder from Huzaifa Travels regarding Zaid Ahmed's outstanding transport fee of $450.00 for October. Please ensure payment is made at your earliest convenience. Thank you!"
+                            </div>
+</div>
+</div>
+<div class="flex items-center gap-2 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<span class="material-icons text-primary text-sm">info</span>
+<p class="text-xs text-emerald-700 dark:text-emerald-300">A notification will be sent immediately via SMS and Email to the registered parent.</p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-6 py-5 bg-background-light dark:bg-emerald-950/20 border-t border-primary/10 flex flex-col-reverse sm:flex-row gap-3">
+<button class="flex-1 px-4 py-3 text-emerald-700 dark:text-emerald-300 font-semibold hover:bg-primary/5 rounded-lg transition-colors">
+                        Cancel
+                    </button>
+<button class="flex-[2] px-4 py-3 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 hover:bg-emerald-700 transition-all flex items-center justify-center gap-2 group">
+                        Confirm &amp; Send
+                        <span class="material-icons text-lg group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Success Toast (Hidden Mockup) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-emerald-900 text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 border border-primary/30 pointer-events-none opacity-0 transform translate-y-10 transition-all">
+<span class="material-icons text-primary">check_circle</span>
+<p class="font-medium">Reminder sent to Zaid's parent successfully!</p>
+</div>
+</body></html>

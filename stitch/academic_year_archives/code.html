@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Academic Year Archives | Huzaifa Travels</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16a249",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                        "archive-gray": "#6B7280",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 min-h-screen">
+<!-- Navigation Header -->
+<nav class="bg-white dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons-outlined">directions_bus</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Huzaifa <span class="text-primary">Travels</span></h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-medium" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-medium" href="#">Student Management</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors font-medium" href="#">Bus Tracking</a>
+<a class="text-primary border-b-2 border-primary pb-5 mt-5 font-bold" href="#">Archives</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-400 hover:text-primary transition-colors">
+<span class="material-icons-outlined">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden border-2 border-primary/20">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a male school administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcANM4dIY5Rkh6UGLdJ9e72W8fW1uZVbxRGsjWXf-JysgRCG7A2KB_DxGWv2PV1bA4BEsS0QUhS9xb9TtpHT-glwAz3_KiiLCAe81JuobExe7ViX32jtQo2b42qshtsz4Cp_FfJLfHd4-rFW9LSoZ1ndjste57kESzfUx4BSKb0-q6zv1NsjGKwm6kWR5_9ZxbWEhKuKGGTxuZEZiBqXInP2XLszarFaRnNT9a4q9KgYUA9d4W0X1oPBJtweXIgQZWcA3uGLK5CTo"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-[1440px] mx-auto px-6 py-8">
+<!-- Archive Header & Selection -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div class="space-y-1">
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Academic Year Archives</h2>
+<p class="text-slate-500 dark:text-slate-400">View and manage historical student data and promotion cycles.</p>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative min-w-[240px]">
+<label class="block text-xs font-semibold text-archive-gray dark:text-slate-400 uppercase tracking-wider mb-1 px-1">Selected Archive</label>
+<div class="relative">
+<select class="w-full bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-2.5 pl-4 pr-10 appearance-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-medium text-slate-700 dark:text-slate-200">
+<option>Academic Year 2022-2023</option>
+<option>Academic Year 2021-2022</option>
+<option>Academic Year 2020-2021</option>
+<option>Academic Year 2019-2020</option>
+</select>
+<span class="material-icons-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">expand_more</span>
+</div>
+</div>
+<div class="flex items-end h-full mt-5">
+<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all shadow-lg shadow-primary/20">
+<span class="material-icons-outlined text-[20px]">upgrade</span>
+                        Promote Class
+                    </button>
+</div>
+</div>
+</div>
+<!-- Warning/Info Banner -->
+<div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl p-4 mb-8 flex items-start gap-4">
+<span class="material-icons-outlined text-amber-600 dark:text-amber-500">info</span>
+<div>
+<h4 class="font-semibold text-amber-900 dark:text-amber-100">Read-Only Archive</h4>
+<p class="text-sm text-amber-800/80 dark:text-amber-200/80">You are currently viewing historical data for the 2022-2023 academic year. Records are locked and cannot be edited. To make changes to current students, please return to the Active Student Management dashboard.</p>
+</div>
+</div>
+<!-- Data Grid Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<!-- Table Action Bar -->
+<div class="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-800/50">
+<div class="relative flex-1 max-w-md">
+<span class="material-icons-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg text-sm focus:ring-primary focus:border-primary transition-all" placeholder="Search archived students by name, ID or route..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-all border border-slate-200 dark:border-slate-700">
+<span class="material-icons-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-all border border-slate-200 dark:border-slate-700">
+<span class="material-icons-outlined text-[18px]">download</span>
+                        Export CSV
+                    </button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/80 text-archive-gray dark:text-slate-400 text-xs uppercase font-bold tracking-wider">
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700">Student ID</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700">Full Name</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700">Grade (2022-23)</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700">Bus Route</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700">Attendance</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700">Status</th>
+<th class="px-6 py-4 border-b border-slate-200 dark:border-slate-700 text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-mono text-slate-500 dark:text-slate-400">#HT-2022-001</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">AA</div>
+<span class="font-medium text-slate-900 dark:text-white">Ahmed Al-Farsi</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Grade 10-B</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Route 14 (East Sector)</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 94%"></div>
+</div>
+<span class="text-xs font-medium">94%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                    Promoted
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-archive-gray hover:text-primary transition-colors">
+<span class="material-icons-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-mono text-slate-500 dark:text-slate-400">#HT-2022-042</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">SK</div>
+<span class="font-medium text-slate-900 dark:text-white">Sarah Khan</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Grade 12-A</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Route 03 (Downtown)</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 88%"></div>
+</div>
+<span class="text-xs font-medium">88%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
+                                    Graduated
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-archive-gray hover:text-primary transition-colors">
+<span class="material-icons-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-mono text-slate-500 dark:text-slate-400">#HT-2022-108</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-archive-gray/10 flex items-center justify-center text-archive-gray font-bold text-xs">JM</div>
+<span class="font-medium text-slate-900 dark:text-white">James Miller</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Grade 8-C</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Route 22 (Industrial)</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full" style="width: 45%"></div>
+</div>
+<span class="text-xs font-medium text-amber-600">45%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-300">
+                                    Withdrawn
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-archive-gray hover:text-primary transition-colors">
+<span class="material-icons-outlined">visibility</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors">
+<td class="px-6 py-4 text-sm font-mono text-slate-500 dark:text-slate-400">#HT-2022-215</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs">MD</div>
+<span class="font-medium text-slate-900 dark:text-white">Maria Delgado</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Grade 9-A</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-300">Route 14 (East Sector)</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 98%"></div>
+</div>
+<span class="text-xs font-medium">98%</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                                    Promoted
+                                </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-archive-gray hover:text-primary transition-colors">
+<span class="material-icons-outlined">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<p class="text-sm text-slate-500 dark:text-slate-400">Showing <span class="font-semibold text-slate-700 dark:text-slate-200">1 to 10</span> of <span class="font-semibold text-slate-700 dark:text-slate-200">248</span> results</p>
+<div class="flex gap-2">
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400 disabled:opacity-50" disabled="">
+<span class="material-icons-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 bg-primary text-white rounded-lg font-bold">1</button>
+<button class="w-10 h-10 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">2</button>
+<button class="w-10 h-10 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">3</button>
+<button class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-400">
+<span class="material-icons-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Stats for Archive -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-icons-outlined">groups</span>
+</div>
+<div>
+<p class="text-xs font-bold text-archive-gray uppercase tracking-wider">Total Students</p>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">1,248</h4>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center text-blue-600">
+<span class="material-icons-outlined">school</span>
+</div>
+<div>
+<p class="text-xs font-bold text-archive-gray uppercase tracking-wider">Graduation Rate</p>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">92.4%</h4>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-full flex items-center justify-center text-amber-600">
+<span class="material-icons-outlined">commute</span>
+</div>
+<div>
+<p class="text-xs font-bold text-archive-gray uppercase tracking-wider">Routes Managed</p>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">24</h4>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-full flex items-center justify-center text-green-600">
+<span class="material-icons-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-xs font-bold text-archive-gray uppercase tracking-wider">Promoted</p>
+<h4 class="text-2xl font-bold text-slate-900 dark:text-white">1,102</h4>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Backdrop (Hidden by default, used for Promote Class UI reference) -->
+<div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden z-[100] flex items-center justify-center p-4">
+<div class="bg-white dark:bg-slate-900 w-full max-w-lg rounded-xl shadow-2xl overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Promote Academic Year</h3>
+<button class="text-slate-400 hover:text-slate-600"><span class="material-icons-outlined">close</span></button>
+</div>
+<div class="p-6 space-y-4">
+<p class="text-slate-600 dark:text-slate-400">This action will move all eligible students from the current year to the <strong>2023-2024</strong> academic cycle. Current records will be moved to the archive.</p>
+<div class="space-y-4 pt-2">
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Target Academic Year</label>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg py-2 px-4 text-slate-500" disabled="" type="text" value="2023-2024"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Select Grades to Promote</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 p-3 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">All Grades</span>
+</label>
+<label class="flex items-center gap-2 p-3 border border-slate-200 dark:border-slate-700 rounded-lg cursor-pointer">
+<input class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm">Custom Selection</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-800/50 flex justify-end gap-3">
+<button class="px-4 py-2 text-sm font-semibold text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">Cancel</button>
+<button class="px-6 py-2 text-sm font-semibold bg-primary text-white rounded-lg hover:bg-primary/90">Start Promotion Process</button>
+</div>
+</div>
+</div>
+</body></html>

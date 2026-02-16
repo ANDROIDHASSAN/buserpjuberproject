@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Directory Listing | Huzaifa Travels</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16a249",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#112117",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center gap-2">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-icons text-white">directions_bus</span>
+</div>
+<span class="font-bold text-xl tracking-tight">Huzaifa<span class="text-primary">Travels</span></span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary font-medium border-b-2 border-primary pb-1" href="#">Students</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Routes</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Drivers</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Billing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-primary/10 text-slate-500">
+<span class="material-icons">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center border border-primary/20">
+<span class="text-primary text-xs font-bold">HT</span>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="text-3xl font-bold tracking-tight">Student Directory</h1>
+<p class="text-slate-500 mt-1">Manage transport enrollment and fee status for 1,240 students.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-primary/20 text-primary font-semibold hover:bg-primary/5 transition-all">
+<span class="material-icons text-[20px]">file_download</span>
+                    Export CSV
+                </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-lg bg-primary text-white font-semibold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all">
+<span class="material-icons text-[20px]">add</span>
+                    Add Student
+                </button>
+</div>
+</div>
+<!-- Search & Filter Controls -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-primary/5 mb-8">
+<div class="relative mb-6">
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-3xl">search</span>
+<input class="w-full pl-14 pr-4 py-5 bg-slate-50 dark:bg-slate-800 border-transparent focus:border-primary focus:ring-0 rounded-xl text-lg placeholder:text-slate-400 transition-all" placeholder="Search by name, student ID, or parent contact..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Gender:</span>
+<div class="flex gap-2">
+<button class="px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium">All</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/10">Male</button>
+<button class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-medium hover:bg-primary/10">Female</button>
+</div>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Class:</span>
+<select class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm font-medium py-1.5 pl-3 pr-8 text-slate-600 dark:text-slate-300 focus:ring-primary/20 cursor-pointer">
+<option>All Classes</option>
+<option>Grade 1</option>
+<option>Grade 2</option>
+<option>Grade 3</option>
+<option>Grade 4</option>
+<option>Grade 5</option>
+</select>
+</div>
+<div class="h-8 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Academic Year:</span>
+<select class="bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm font-medium py-1.5 pl-3 pr-8 text-slate-600 dark:text-slate-300 focus:ring-primary/20 cursor-pointer">
+<option>2023-24</option>
+<option>2022-23</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Student Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Student Card 1 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Close up portrait of a young male student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCds6fu8dwg8nRqrsNzLAtCjk_hLurjvpb3FwZR3DP315wlA4wMic46ceUZ1Up3wfj5MzjD4e4RV32XsJ2jTP8qaWCXq4_iuDRlLAuh67xngiBMJO38feL610FGL41MtsqlheYqEfQOSLBVUxhL_C5Ham9aiMmaN6ICF8_hsQUGnyVSzHP5MMQdrVQnXjRFOp16jDLtZR0yKXXDX-VPaMUsgjzmHAHklfjgTR0f_87MCIvbvc1i-dGhaq2D7zZ890i89LVGHIZLO3w"/>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Paid</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Ahmad Hassan</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 4 - Section B</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Zaid Hassan</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 300 1234567</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #12 - Block 5</span>
+</div>
+</div>
+</div>
+<!-- Student Card 2 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Smiling school girl with braids" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_qT7y1xrMmYRhMhxodkCxlV6bz-vjiThtkPzrMUqrSm-6Ng74CcFq_GOk1ZwG4GwL4IKIZ0vQb-n0Q6t_oJcK1d70GRyi3kJzYErPQ5L4NIEaivO0bqyjI4vaYYaqIZPuGB4GjWP7xPapog0Pn-sUrZhzR7EW2NWjfrwCzRbYwXOm8x3si7T5fCWNV1VIj2ENiZOXF1uYNlpouf0YcMtL-JdYHM9aKM_og3A0uZZdPMYfoWl0N0nRB9XpodV9hCNwChxbeAKO57E"/>
+<span class="bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pending</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Zainab Fatima</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 2 - Section A</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Irfan Ali</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 321 9876543</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #04 - Gulshan</span>
+</div>
+</div>
+</div>
+<!-- Student Card 3 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Young boy wearing school glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3SNc6jaH8_WRwD-STci_G2yc84S16jIUSXfrP9a6Ojoa29NXKTIMiMQ97CSGMTa9illIJgPiSieWcrn9a7nTYCBlVtTAhBozSF30vrIcL08UfpJVMxRhvSoypsEjDSKjbhynvEGFpr-25L1L3LCKispcPQW3csjwsViuBSbwKRbPLmZ5KmNFu2Q4xNPIu8j4itF1UeCx5SpdWf2zxOirMcZrQsbS-O6-8CYS7AByO_GhLJ9WLT69aMlks7m0xjCbASMS7R60dewE"/>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Paid</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Bilal Siddiqui</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 5 - Section C</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Omar Siddiqui</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 333 4445556</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #09 - Clifton</span>
+</div>
+</div>
+</div>
+<!-- Student Card 4 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Portrait of a primary school student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBvltkwrgfehfkyVKHNSGZK6IYjintj20RCyOyoof6JgZMucqx12bpNzpHW_2Ccqv-xCD7QTCPqyK2BY2T9SM3yoeKR4ANS0eBBauacTm3-470gaLpxtFT-6rQQx1AyYeTlEkhPvbTjiHt_IVxw07yMxxAHliz3izqKr1aElkb2M13CpBfY6FG2w2ZeqyIJ1Zyn9bohTn4-We4l50KqKyoEUFN4j7Hu8DpyG2tUOXwhwaz79-s_GJVJe13sj08C4GCvdJqBSatxbs"/>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Paid</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Hamza Khalid</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 1 - Section A</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Khalid Khan</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 345 2233445</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #12 - Block 5</span>
+</div>
+</div>
+</div>
+<!-- Student Card 5 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Young girl student with school uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxUFCEni_QRHDbXshyF4fzBogXrJzEPeSqJAtSV9On426hiQRFEjwlqzdWFuKMPDhr60mvBkp3bfi2kWoQbIkNlaPU19uBWJPiNE5s5ZcG7SiznGATPNf_uEOWI0Oh7DYbwys-6bmHVIrRaxLJWxYzE3octDGPSTpfKtF04g3DXw_DDl0zH1GEWBTq8cM_GsEWpGyVVE1_Ehr1uBGnEisowPlLMy3ykcBd_S6TtBCUFl_u1UwaYKGobQyQGcz_juLlA3nQmGPKJjo"/>
+<span class="bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pending</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Sara Pervez</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 3 - Section B</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Pervez Ishaq</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 312 3344556</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #21 - Defence</span>
+</div>
+</div>
+</div>
+<!-- Student Card 6 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Boy student with backpack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO5gK5UbVaS_BPHd0_vpKFL3sTlyCjX5GdS-HQXrA8rxca4cXzVKsveEn4tgv9345WO5-pGmvH8ZoSsjKqeuiJTP9PydDX6aVF1OHK1yavDu1TNFRi-tX8g0hZDA7lWnkD6VasWDLVqVmCsAt6AB-_jdKeQVNa8vJ8eCvxcqXftPhm0FqL-_47P30qPh9286EZpZTu2SN5bqNUwrUJrO1VWVdycY6gkpj0wHNaTf3bMuM28S8ofF25s7r_a36zHJ4g0dqbNlnFFGk"/>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Paid</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Yousuf Ali</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 2 - Section A</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Mansoor Ali</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 301 7788990</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #04 - Gulshan</span>
+</div>
+</div>
+</div>
+<!-- Student Card 7 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Portrait of a primary school girl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZKY8Gelnw0QapML9WN56ucGuhVbizZqbd8Ub_qim3pWpF-GKVXMI1kEUYzXcrjgMtcM_kgeA8aXWfN5BSP1QNFkTq3B2PQulDoWO9rv30HhbO6qZWufJGPn1AzT_YIwWnqswIaCsu-Jpd6ID8OFks1wgtOV1VhJ67nTvjjObYDmNuYZjs5DExUgXJ4PC1ieHSPPwzzEtY8u0BOxED19--1VbBMXjc0izY4myWu1B7N1rqith-Qbh8JCkFigP4VJb5URB9UpQqniI"/>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Paid</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Ayesha Noor</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 4 - Section C</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Noor Mohammad</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 300 5544332</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #15 - North Kar</span>
+</div>
+</div>
+</div>
+<!-- Student Card 8 -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-5 shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md hover:border-primary/20 transition-all group">
+<div class="flex justify-between items-start mb-4">
+<img class="w-16 h-16 rounded-full object-cover ring-2 ring-primary/10" data-alt="Student with a bright smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFi-qFFmhaoGyoXBaUbU0T0VhlU-XC6gsy8slrY5wYyge9iPYCY8-K5dScm1qHji7yhyQP7cStL-OiLa4mSRxPx0dh25t8dzhIXN54pJOU1NaZlu1ZwBvN9cpbje0H6RYptPmqwlZjoBNPDdq806TWqHx0H6Mqpgvkme5YFwwDKTvXifwtvm9TI5hq1JWDtHqcR0oy5jmgsY0wtNzXe6819EPLNRohbTyK8B3uRwplS-T1PY2WtF5BUS6xEemUy83CPaME_Iw2Xl4"/>
+<span class="bg-red-100 text-red-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Pending</span>
+</div>
+<h3 class="text-lg font-bold group-hover:text-primary transition-colors">Umar Farooq</h3>
+<p class="text-slate-500 text-sm mb-4">Grade 3 - Section A</p>
+<div class="space-y-2 border-t border-slate-50 dark:border-slate-800 pt-4">
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">person</span>
+<span>Parent: Farooq Ahmed</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">call</span>
+<span>+92 331 8877665</span>
+</div>
+<div class="flex items-center gap-2 text-xs text-slate-500">
+<span class="material-icons text-[16px]">location_on</span>
+<span>Route #09 - Clifton</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-6">
+<p class="text-sm text-slate-500">Showing 8 of 1,240 students</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50" disabled="">Previous</button>
+<button class="px-4 py-2 rounded-lg bg-primary/10 text-primary text-sm font-bold">1</button>
+<button class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800">2</button>
+<button class="px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800">3</button>
+<button class="px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-800 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800">Next</button>
+</div>
+</div>
+</main>
+<footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-slate-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2 opacity-60">
+<span class="material-icons text-primary text-sm">directions_bus</span>
+<span class="text-sm font-medium">Huzaifa Travels CRM v2.4</span>
+</div>
+<div class="flex gap-6">
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Support Helpdesk</a>
+</div>
+</div>
+</footer>
+</body></html>
